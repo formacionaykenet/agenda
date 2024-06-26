@@ -1,7 +1,7 @@
 <?php
 // conexion.php
 function obtenerConexion() {
-    $dsn = 'mysql:host=localhost;dbname=tu_base_de_datos';
+    $dsn = 'mysql:host=localhost;dbname=agenda';
     $usuario = 'root';
     $contrasena = '';
     try {

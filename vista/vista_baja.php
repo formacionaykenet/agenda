@@ -1,5 +1,6 @@
 <?php
 // app/vistas/vista_baja.php
+require_once('../config.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">

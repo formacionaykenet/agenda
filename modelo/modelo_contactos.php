@@ -1,6 +1,6 @@
 <?php
 // app/modelos/modelo_contactos.php
-require_once __DIR__ . '/../../conexion.php';
+require_once '../conexion.php';
 
 function obtenerContactos() {
     $pdo = obtenerConexion();
