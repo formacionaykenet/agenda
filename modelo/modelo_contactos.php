@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 // app/modelos/modelo_contactos.php
 require_once '../conexion.php';
 

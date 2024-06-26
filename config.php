@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 // config/config.php
 define('APP_DIR', __DIR__);
 define('MODELO_PATH', APP_DIR . '/modelo');

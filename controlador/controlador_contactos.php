@@ -1,5 +1,8 @@
 <?php
 // app/controladores/controlador_contactos.php
+
+session_start();
+
 require_once '../config.php';
 require_once MODELO_PATH . '/modelo_contactos.php';
 

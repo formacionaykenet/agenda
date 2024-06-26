@@ -1,5 +1,7 @@
 <?php
 // /vistas/vista_alta.php
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
