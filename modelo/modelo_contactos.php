@@ -4,9 +4,16 @@ session_start();
 // app/modelos/modelo_contactos.php
 require_once '../conexion.php';
 
+function obtenerContactoPorId($id) {
+    $pdo = obtenerConexion();
+    $stmt = $pdo->prepare("SELECT * FROM contactos WHERE id_contacto = :id");
+    $stmt->execute(['id' => $id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 function obtenerContactos() {
     $pdo = obtenerConexion();
-    $stmt = $pdo->query("SELECT * FROM contactos");
+    $stmt = $pdo->query("SELECT * FROM contactos WHERE activo = 1");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -31,7 +38,13 @@ function actualizarContacto($id, $datos) {
 
 function eliminarContacto($id) {
     $pdo = obtenerConexion();
-    $stmt = $pdo->prepare("DELETE FROM contactos WHERE id_contacto = ?");
+    $stmt = $pdo->prepare("UPDATE contactos SET activo = 0, WHERE id_contacto = ?");
     return $stmt->execute([$id]);
 }
+
+/*function eliminarContacto($id) {
+    $pdo = obtenerConexion();
+    $stmt = $pdo->prepare("DELETE FROM contactos WHERE id_contacto = ?");
+    return $stmt->execute([$id]);
+}*/
 ?>

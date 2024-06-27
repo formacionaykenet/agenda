@@ -1,5 +1,8 @@
 <?php
 // app/vistas/vista_listado.php
+error_reporting(E_ALL ^ E_NOTICE);
+session_start();
+require_once('../config.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">

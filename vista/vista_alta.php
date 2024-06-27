@@ -1,6 +1,12 @@
 <?php
 // /vistas/vista_alta.php
+
+error_reporting(E_ALL ^ E_NOTICE);
 session_start();
+require_once("../config.php");
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -67,7 +73,7 @@ session_start();
         </div>
         <div class="form-row">
             <div class="form-group col-md-6 form-check">
-                <input type="checkbox" class="form-check-input" id="activo" name="activo" value="1">
+                <input type="checkbox" class="form-check-input" id="activo" name="activo" value="1" checked>
                 <label class="form-check-label" for="activo">Activo</label>
             </div>
         </div>

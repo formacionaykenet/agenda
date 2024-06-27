@@ -1,13 +1,16 @@
 <?php
-// app/controladores/controlador_contactos.php
-
+// /controladores/controlador_contactos.php
+error_reporting(E_ALL ^ E_NOTICE);
 session_start();
-
-require_once '../config.php';
+require_once('../config.php');
 require_once MODELO_PATH . '/modelo_contactos.php';
 
 // Obtener la acción desde la URL
 $accion = $_GET['accion'] ?? null;
+
+if (isset($_POST['accion'])){
+    $accion = $_POST['accion'];
+}
 
 switch ($accion) {
     case 'alta':
@@ -19,8 +22,15 @@ switch ($accion) {
         break;
 
     case 'modificacion':
+        include VISTAS_PATH . '/vista_pedir_id.php';
+        break;
+
+    case 'modificar':
+        $id = $_POST['id'];
+        $contacto = obtenerContactoPorId($id);
         include VISTAS_PATH . '/vista_modificacion.php';
         break;
+
 
     case 'consulta':
         include VISTAS_PATH . '/vista_consulta.php';

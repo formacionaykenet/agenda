@@ -3,8 +3,15 @@
 session_start();
 
 // config/config.php
-define('APP_DIR', __DIR__);
-define('MODELO_PATH', APP_DIR . '/modelo');
-define('VISTAS_PATH', APP_DIR . '/vista');
-define('CONTROLADOR_PATH', APP_DIR . '/controlador');
+
+// Definir la ruta base del proyecto
+define('BASE_PATH', '/agenda');
+
+// Definir la ruta absoluta del proyecto en el servidor
+define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . BASE_PATH);
+
+
+define('MODELO_PATH', ROOT_PATH . '/modelo');
+define('VISTAS_PATH', ROOT_PATH . '/vista');
+define('CONTROLADOR_PATH', ROOT_PATH . '/controlador');
 ?>
